@@ -43,7 +43,7 @@ setGender(res.data.gender)
         gender
       }
       console.log('updated user = ',newUser)
-      dispatch(updateUser(newUser))
+      dispatch(updateUser({user : newUser,id: params.id }))
       .unwrap()
       .then(res =>{
         toast.success(' user updated successfully')

@@ -28,12 +28,16 @@ return res.data
 //Update
 
 export const updateUser = createAsyncThunk("users/update",async({user , id})=>{
-
+console.log(`updated user = `, user, "and id = ",id)
+const res =  await UserApi.update(user,id)
+return res.data
 })
 
 
 
 //Delete
 export const deleteUser = createAsyncThunk("users/delete",async ({id})=>{
-
+console.log('delete user id =',id)
+const res = await UserApi.delete(id)
+return { id }
 })
